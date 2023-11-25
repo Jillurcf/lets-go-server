@@ -7,11 +7,13 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const authenticationRoutes = require('./routes/authentication/index')
+const contesRoutes = require('./routes/Contests')
 
 
 applyMiddleware(app)
 
 app.use(authenticationRoutes)
+app.use(contesRoutes)
 
 app.get('/health', (req, res) => {
     res.send('assignment12')
