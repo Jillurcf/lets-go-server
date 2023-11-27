@@ -5,4 +5,5 @@ const router = require('express').Router()
 
 router.get('/Contests', findAll)
 
+
 module.exports = router
