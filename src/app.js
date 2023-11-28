@@ -19,7 +19,9 @@ const addCarts = require('./routes/PostCarts');
 const delteContest = require('./routes/deleteContest');
 const addContest = require('./routes/AddContest');
 const getCreateContest = require('./routes/GetCreateContest');
-const updateContest = require('./routes/UpdateContest')
+const updateContest = require('./routes/UpdateContest');
+const removeUser = require('./routes/RmoveUsers')
+
 
 
 applyMiddleware(app)
@@ -38,7 +40,9 @@ app.use(addCarts);
 app.use(delteContest);
 app.use(addContest);
 app.use(getCreateContest);
-app.use(updateContest)
+app.use(updateContest);
+app.use(removeUser)
+
 
 // test
 
