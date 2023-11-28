@@ -12,7 +12,10 @@ const updateParticipant = require('./routes/ParticipantUpdate');
 const seeDetails = require('./routes/SeeDetails');
 const ceateUsers = require('./routes/Users');
 const getAdmin = require('./routes/GetAdmin');
-const getUsers = require('./routes/GetUsers/index')
+const getUsers = require('./routes/GetUsers/index');
+const paymentIntent = require('./routes/paymentIntent');
+const getCarts = require('./routes/Carts');
+const payements = require('./routes/Payments');
 
 
 applyMiddleware(app)
@@ -23,7 +26,10 @@ app.use(updateParticipant);
 app.use(seeDetails);
 app.use(ceateUsers);
 app.use(getAdmin);
-app.use(getUsers)
+app.use(getUsers);
+app.use(paymentIntent);
+app.use(getCarts);
+app.use(payements)
 
 // test
 
