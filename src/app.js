@@ -18,7 +18,8 @@ const payements = require('./routes/Payments');
 const addCarts = require('./routes/PostCarts');
 const delteContest = require('./routes/deleteContest');
 const addContest = require('./routes/AddContest');
-const getCreateContest = require('./routes/GetCreateContest')
+const getCreateContest = require('./routes/GetCreateContest');
+const updateContest = require('./routes/UpdateContest')
 
 
 applyMiddleware(app)
@@ -37,6 +38,7 @@ app.use(addCarts);
 app.use(delteContest);
 app.use(addContest);
 app.use(getCreateContest);
+app.use(updateContest)
 
 // test
 
