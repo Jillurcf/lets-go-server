@@ -20,7 +20,8 @@ const delteContest = require('./routes/deleteContest');
 const addContest = require('./routes/AddContest');
 const getCreateContest = require('./routes/GetCreateContest');
 const updateContest = require('./routes/UpdateContest');
-const removeUser = require('./routes/RmoveUsers')
+const removeUser = require('./routes/RmoveUsers');
+const updateUsers = require('./routes/UpdateUsers')
 
 
 
@@ -41,7 +42,8 @@ app.use(delteContest);
 app.use(addContest);
 app.use(getCreateContest);
 app.use(updateContest);
-app.use(removeUser)
+app.use(removeUser);
+app.use(updateUsers)
 
 
 // test
@@ -80,3 +82,21 @@ module.exports= app;
 
  // "start": "node src/app.js",
     // "dev": "nodemon src/app.js",
+
+
+//    app.patch(
+//     "/users/admin/:id",
+//     verifyToken,
+//     verifyAdmin,
+//     async (req, res) => {
+//       const id = req.params.id;
+//       const filter = { _id: new ObjectId(id) };
+//       const updatedDoc = {
+//         $set: {
+//           role: "admin",
+//         },
+//       };
+//       const result = await userCollection.updateOne(filter, updatedDoc);
+//       res.send(result);
+//     }
+//   );
