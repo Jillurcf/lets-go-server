@@ -4,7 +4,7 @@ require("dotenv").config();
 const getConnectionString = () => {
   let connectionUrl;
 
-  if (process.env.NODE_ENV === "development") {
+  // if (process.env.NODE_ENV === "development") {
     connectionUrl = process.env.DATABASE_LOCAL;
     connectionUrl = connectionUrl.replace(
       "<username>",
@@ -13,11 +13,12 @@ const getConnectionString = () => {
     connectionUrl = connectionUrl.replace(
         "<password>", process.env.DATABASE_LOCAL_PASSWORD);
  
-  } else {
-    connectionUrl = process.env.DATABASE_PROD;
-  }
-
+  // } else {
+  //   connectionUrl = process.env.DATABASE_PROD;
+  // }
+  console.log(connectionUrl);
   return connectionUrl;
+  
 };
 
 const connectDB = async () => {

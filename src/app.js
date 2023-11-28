@@ -1,10 +1,9 @@
 const { error } = require("console");
 const express = require("express");
 const applyMiddleware = require("./middlewares/applyMiddleware");
-const connectDB = require("./db/connectDB");
 require("dotenv").config();
 const app = express();
-const port = process.env.PORT || 5000;
+
 
 const authenticationRoutes = require('./routes/authentication/index')
 const contestRoutes = require('./routes/Contests')
@@ -16,6 +15,10 @@ const getUsers = require('./routes/GetUsers/index');
 const paymentIntent = require('./routes/paymentIntent');
 const getCarts = require('./routes/Carts');
 const payements = require('./routes/Payments');
+const addCarts = require('./routes/PostCarts');
+const delteContest = require('./routes/deleteContest');
+const addContest = require('./routes/AddContest');
+const getCreateContest = require('./routes/GetCreateContest')
 
 
 applyMiddleware(app)
@@ -30,6 +33,10 @@ app.use(getUsers);
 app.use(paymentIntent);
 app.use(getCarts);
 app.use(payements)
+app.use(addCarts);
+app.use(delteContest);
+app.use(addContest);
+app.use(getCreateContest);
 
 // test
 
@@ -54,10 +61,16 @@ app.use((err, req, res, next)=>{
     })
 })
 
-const main = async()=>{
-await connectDB()
-    app.listen(port, () => {
-        console.log(`assignment12 Server is running on port ${port}`);
-    })
-}
-main();
+// const main = async()=>{
+// await connectDB()
+//     app.listen(port, () => {
+//         console.log(`assignment12 Server is running on port ${port}`);
+//     })
+// }
+// main();
+
+module.exports= app;
+
+
+ // "start": "node src/app.js",
+    // "dev": "nodemon src/app.js",
