@@ -21,7 +21,9 @@ const addContest = require('./routes/AddContest');
 const getCreateContest = require('./routes/GetCreateContest');
 const updateContest = require('./routes/UpdateContest');
 const removeUser = require('./routes/RmoveUsers');
-const updateUsers = require('./routes/UpdateUsers')
+const updateUsers = require('./routes/UpdateUsers');
+const getCreator = require('./routes/GetCreator')
+
 
 
 
@@ -44,6 +46,8 @@ app.use(getCreateContest);
 app.use(updateContest);
 app.use(removeUser);
 app.use(updateUsers)
+app.use(getCreator)
+
 
 
 // test
