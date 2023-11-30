@@ -2,6 +2,6 @@ const approveContest = require('../../api/approveContest/controller/approveConte
 
 const router = require('express').Router()
 
-router.put('/contests/:id', approveContest)
+router.put('/contests/approve/:id', approveContest)
 
 module.exports = router

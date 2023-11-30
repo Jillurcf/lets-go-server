@@ -1,10 +1,11 @@
 const Contests = require("../../../models/Contest")
 
 const getTags = async (req, res) => {
-    const { tag } = req.query;
+    const { tags } = req.query;
+    console.log(tags)
     // const query = req.query.tags;
 //    const result = await Contests.find({query})
-const result = await Contests.find({ tags: tag });
+const result = await Contests.find({ tags: tags });
    res.send(result)
 }
 

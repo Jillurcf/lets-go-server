@@ -20,6 +20,7 @@ const delteContest = require('./routes/deleteContest');
 const addContest = require('./routes/AddContest');
 const getCreateContest = require('./routes/GetCreateContest');
 const updateContest = require('./routes/UpdateContest');
+const putUpdateContest = require('./routes/putUpdateContest')
 const removeUser = require('./routes/RmoveUsers');
 const updateUsers = require('./routes/UpdateUsers');
 const getCreator = require('./routes/GetCreator');
@@ -51,6 +52,7 @@ app.use(updateUsers);
 app.use(getCreator);
 app.use(getTags);
 app.use(approveContest);
+app.use(putUpdateContest)
 
 
 

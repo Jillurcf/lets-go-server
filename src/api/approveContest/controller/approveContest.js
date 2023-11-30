@@ -1,22 +1,28 @@
 const Contest = require('../../../models/Contest')
+const mongoose = require("mongoose");
 
 
 const approveContest= async(req, res)=>{
-    const {id: _id} = req.params;
+   const {id: _id} = req.params;
+console.log(_id)
     // const updatedCount = req.body;
     // console.log(updatedCount);
-    const contest = {
-        $set: {        
+    const updatedDoc = {
+        // $set: {        
           statu: "approved"         
-        }
+        // }
     }
-    const result = await Contest.findByIdAndUpdate({_id}, contest, {
+    console.log(updatedDoc)
+    const result = await Contest.findByIdAndUpdate(_id, updatedDoc, {
         new:true,
-        runValidators: true
+        
     })
+  
     res.send(result)
 
-    console.log(result);
+   
 }
 
 module.exports = approveContest
+
+// runValidators: true
