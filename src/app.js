@@ -22,7 +22,9 @@ const getCreateContest = require('./routes/GetCreateContest');
 const updateContest = require('./routes/UpdateContest');
 const removeUser = require('./routes/RmoveUsers');
 const updateUsers = require('./routes/UpdateUsers');
-const getCreator = require('./routes/GetCreator')
+const getCreator = require('./routes/GetCreator');
+const getTags = require('./routes/GetTags');
+const approveContest = require('./routes/ApprovedContest')
 
 
 
@@ -45,8 +47,10 @@ app.use(addContest);
 app.use(getCreateContest);
 app.use(updateContest);
 app.use(removeUser);
-app.use(updateUsers)
-app.use(getCreator)
+app.use(updateUsers);
+app.use(getCreator);
+app.use(getTags);
+app.use(approveContest);
 
 
 
